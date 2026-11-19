@@ -5,7 +5,7 @@ public class Test {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        ArrayList<sach> dsSach = new ArrayList<>();
+        ArrayList<Sach> dsSach = new ArrayList<>();
 
         int chon;
 
@@ -39,7 +39,7 @@ public class Test {
                     System.out.println("Nhap so luong sach: ");
                     soLuong =sc.nextInt();
                     sc.nextLine();
-                    sach s = new sach(maSach, tieuDe, tacGia, namXuatBan, soLuong);
+                    Sach s = new Sach(maSach, tieuDe, tacGia, namXuatBan, soLuong);
                     dsSach.add(s);
                     System.out.println("Them sach thanh cong!");
                     break;
@@ -48,7 +48,7 @@ public class Test {
                     if(dsSach.isEmpty())
                         System.out.println("Danh sach sach rong!");
                     else{
-                        for(sach s: dsSach){
+                        for(Sach s: dsSach){
                             s.hienThiThongTin();
                             System.out.println("...............");
                         }
@@ -60,8 +60,8 @@ public class Test {
                     boolean timthay = false;
                     System.out.println("Nhap man sach can tim: ");
                     ma = sc.nextLine();
-                    for(sach s : dsSach){
-                        if(s.masach.equals(ma)){
+                    for(Sach s : dsSach){
+                        if(s.getMaSach().equals(ma)){
                             s.hienThiThongTin();
                             timthay = true;
                         }
@@ -76,7 +76,7 @@ public class Test {
                     System.out.println("Nhap ma sach can xoa: ");
                     ma = sc.nextLine();
                     for(int i=0 ; i<dsSach.size(); i++){
-                        if(dsSach.get(i).masach.equals(ma)){
+                        if(dsSach.get(i).getMaSach().equals(ma)){
                             dsSach.remove(i);
                             daxoa =true;
                             break;
